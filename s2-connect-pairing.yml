@@ -39,9 +39,9 @@ paths:
                   $ref: "s2-connect-common.yml#/components/schemas/S2NodeDescription"
                 clientS2EndpointDescription:
                   $ref: "s2-connect-common.yml#/components/schemas/S2EndpointDescription"
-                pairingS2NodeId:
-                  description: This is a server-assigned identifier of the S2Node that this server represents (which can be part of the pairing token that needs to be entered by the end user). When the server represents only one S2Node (which can be the case for LAN deployment) no pairingS2NodeId has to be provided.
-                  $ref: '#/components/schemas/PairingS2NodeId'
+                s2NodeIdAlias:
+                  description: This is a server-assigned identifier of the S2Node that this server represents (which can be part of the pairing token that needs to be entered by the end user). When the server represents only one S2Node (which can be the case for LAN deployment) no S2NodeIdAlias has to be provided.
+                  $ref: '#/components/schemas/S2NodeIdAlias'
                 supportedCommunicationProtocols:
                   type: array
                   items:
@@ -368,7 +368,7 @@ components:
             - "Other"
         additionalInfo:
           type: string
-    PairingS2NodeId:
+    S2NodeIdAlias:
       description: A identifier of the S2 node which is unique for the context of the Endpoint. It is used as a short identifier (since the user might have to type it in manually) for the S2Node, which can be used to lookup the actual S2NodeId.
       type: string
       pattern: "^[0-9a-zA-Z]+$"
