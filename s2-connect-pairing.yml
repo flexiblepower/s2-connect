@@ -241,16 +241,17 @@ paths:
               required:
                 - clientS2NodeDescription
                 - clientS2EndpointDescription
+                - serverS2NodeId
               properties:
                 clientS2NodeDescription:
                   $ref: 's2-connect-common.yml#/components/schemas/S2NodeDescription'
                 clientS2EndpointDescription:
                   $ref: 's2-connect-common.yml#/components/schemas/S2EndpointDescription'
-                serverS2PairingNodeId:
-                  $ref: '#/components/schemas/PairingS2NodeId'
+                serverS2NodeId:
+                  $ref: 's2-connect-common.yml#/components/schemas/S2NodeId'
       responses:
         '204':
-          description: Notification received (also used when provided targetS2Node is not known).
+          description: Notification received (also used when provided serverS2Node is not known).
         '400':
           description: Based on the provided information, the server already notifies the client it is not willing to pair with the S2 node.
           content:
@@ -274,15 +275,16 @@ paths:
             schema:
               type: object
               required: 
-                -  clientS2NodeId
+                - clientS2NodeId
+                - serverS2NodeId
               properties:
                 clientS2NodeId:
                   $ref: "s2-connect-common.yml#/components/schemas/S2NodeId"
-                serverS2PairingNodeId:
-                  $ref: '#/components/schemas/PairingS2NodeId'                
+                serverS2NodeId:
+                  $ref: 's2-connect-common.yml#/components/schemas/S2NodeId'              
       responses:
         '204':
-          description: Cancellation received (also the response when the server does not recognize the clientS2NodeId).
+          description: Cancellation received (also used when provided clientS2NodeId or serverS2Node is not known).
         '401':
           description: The requests originates from outside the LAN
 
