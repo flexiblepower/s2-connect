@@ -132,11 +132,13 @@ paths:
               properties:
                 clientS2NodeId:
                   $ref: 's2-connect-common.yml#/components/schemas/S2NodeId'
+                serverS2NodeId:
+                  $ref: 's2-connect-common.yml#/components/schemas/S2NodeId'
       responses:
         '204':
           description: Unpairing successful.
         '401':
-          description: Unauthorized, clientS2NodeId not found or accessToken not accepted (this could be because the nodes are already unpaired).
+          description: Unauthorized, clientS2NodeId or serverS2NodeId not found or accessToken not accepted (this could be because the nodes are already unpaired).
 
 components:
   schemas:
