@@ -5,7 +5,7 @@ info:
   description: "Common schemas used for both pairing and connection initiation. For more information, please find the specification at [S2 documentation](https://docs.s2standard.org)."
   license:
     name: Apache-2.0
-    url: https://raw.githubusercontent.com/flexiblepower/s2-ws-json/refs/heads/main/LICENSE
+    url: https://raw.githubusercontent.com/flexiblepower/s2-connect/refs/heads/main/LICENSE
 components:
   schemas:  
     S2NodeId:
