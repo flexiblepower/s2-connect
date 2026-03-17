@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: "1.0-beta-1"
+  version: "1.0-beta-2"
   title: S2 Connect - Connection initiation
   description: "The HTTP API specification of the pairing process for S2 Connect, as well as initiating connections. For more information, please find the specification at [S2 documentation](https://docs.s2standard.org)."
   license:
