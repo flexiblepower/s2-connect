@@ -1,20 +1,20 @@
 openapi: 3.0.3
 info:
-  version: "1.0-beta-1"
+  version: "1.0-beta-2"
   title: S2 Connect - Common schemas
   description: "Common schemas used for both pairing and connection initiation. For more information, please find the specification at [S2 documentation](https://docs.s2standard.org)."
   license:
     name: Apache-2.0
-    url: https://raw.githubusercontent.com/flexiblepower/s2-ws-json/refs/heads/main/LICENSE
+    url: https://raw.githubusercontent.com/flexiblepower/s2-connect/refs/heads/main/LICENSE
 components:
   schemas:  
-    S2NodeId:
-      description: Unique identifier of the S2 node
+    NodeId:
+      description: Unique identifier of the node
       type: string
       format: uuid
     CommunicationProtocol:
       type: string
-      description: The type of communication protocol supported by the S2 node
+      description: The type of communication protocol supported by the node
       enum:
         - "WebSocket"
     AccessToken:
@@ -23,12 +23,12 @@ components:
       type: string
       format: byte
     CommunicationToken:
-      description: "Token that is used to authorize the communication channel (e.g. WebSocket) between the S2 nodes. It is obtained by calling the requestToken endpoint and is valid for a single connection to the S2 message communication channel.\
+      description: "Token that is used to authorize the communication channel (e.g. WebSocket) between the nodes. It is obtained by calling the requestToken endpoint and is valid for a single connection to the S2 message communication channel.\
                      This token is valid for maximum 30 seconds, and should have a minimum length of 32 bytes."
       type: string
       format: byte
-    S2EndpointDescription:
-      description: Information about the pairing endpoint of a S2 node
+    EndpointDescription:
+      description: Information about the pairing endpoint of a node
       properties:
         name:
           type: string
@@ -37,7 +37,7 @@ components:
           format: uri
         deployment:
           $ref: "#/components/schemas/Deployment"
-    S2NodeDescription:
+    NodeDescription:
       required:
         - "id"
         - "brand"
@@ -45,10 +45,10 @@ components:
         - "modelName"
         - "role"
       type: object
-      description: Information about the S2 node
+      description: Information about the node
       properties:
         id:
-          $ref: "#/components/schemas/S2NodeId"
+          $ref: "#/components/schemas/NodeId"
         brand:
           type: string
         logoUrl:
@@ -61,8 +61,8 @@ components:
         userDefinedName:
           type: string
         role:
-          $ref: "#/components/schemas/S2Role"
-    S2Role:
+          $ref: "#/components/schemas/Role"
+    Role:
       type: string
       enum:
         - "CEM"
