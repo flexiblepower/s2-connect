@@ -130,6 +130,9 @@ paths:
           application/json:
             schema:
               type: object
+              required: 
+                - clientNodeId
+                - serverNodeId
               properties:
                 clientNodeId:
                   $ref: 's2-connect-common.yml#/components/schemas/NodeId'
