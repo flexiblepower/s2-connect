@@ -19,9 +19,13 @@ paths:
         - name: region
           in: query
           schema:
-            $ref: "#/components/schemas/M49Region"
+            type: array
+            items:
+              $ref: "#/components/schemas/CountryCode"
           required: false
-          description: Region to filter on. It is possible to filter on hierarchical regions, such as "155" for Western Europe.
+          style: form
+          explode: false
+          description: Country codes to filter on. Codes are delimited by commas (e.g. "endpoint?region=NL,BE,LU") When multiple codes provided, results will include endpoints that are active in at least one of the provided country codes.
         - name: status
           in: query
           schema:
@@ -95,7 +99,9 @@ components:
         - id
         - name
         - description
-        - logoUrl
+        - icon32
+        - icon128
+        - icon512
         - pairingApiUrl
         - regions
         - status
@@ -111,8 +117,16 @@ components:
         description:
           description: User facing description of the endpoint.
           maxLength: 500
-        logoUrl:
-          description: User facing logo for the endpoint. Logo's must be square (have the same length and with), have a maximum resolution of 512 by 512 pixels and may be in the png, jpg or svg format.
+        icon32:
+          description: URL of the icon of the endpoint in the size of 32 by 32 pixels and in PNG format.
+          type: string
+          format: uri
+        icon128:
+          description: URL of the icon of the endpoint in the size of 128 by 128 pixels and in PNG format.
+          type: string
+          format: uri
+        icon512:
+          description: URL of the icon of the endpoint in the size of 512 by 512 pixels and in PNG format.
           type: string
           format: uri
         pairingApiUrl:
@@ -120,11 +134,11 @@ components:
           type: string
           format: uri
         regions:
-          description: M49 codes of the regions in which this endpoint operates (https://unstats.un.org/unsd/methodology/m49/). 
+          description: The ISO 3166-1 alpha-2 country codes in which this S2 WAN Endpoint operates.
           type: array
           minItems: 1
           items:
-            $ref: "#/components/schemas/M49Region"
+            $ref: "#/components/schemas/CountryCode"
         status:
           $ref: "#/components/schemas/Status"
         cem:
@@ -137,11 +151,10 @@ components:
       description: Unique identifier of the WAN endpoint registration
       type: string
       format: uuid
-    M49Region:
-      description: An M49 code of a region (see https://unstats.un.org/unsd/methodology/m49/). 
+    CountryCode:
+      description: An ISO 3166-1 alpha-2 country code
       type: string
-      pattern: '^[0-9]{3}$'
-      default: "001"
+      pattern: '^[A-Z]{2}$'
     Status:
       description: Status of the endpoint
       type: string
