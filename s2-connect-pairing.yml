@@ -207,6 +207,10 @@ paths:
             application/json:
               schema:
                 $ref: 's2-connect-common.yml#/components/schemas/EndpointDescription'
+        '401':
+          description: The requests originates from outside the LAN
+        '404':
+          description: Not implemented (this is the recommended response from WAN endpoints)
                 
   /nodes:
     get:
@@ -224,6 +228,10 @@ paths:
                 type: array
                 items: 
                   $ref: 's2-connect-common.yml#/components/schemas/NodeDescription'
+        '401':
+          description: The requests originates from outside the LAN
+        '404':
+          description: Not implemented (this is the recommended response from WAN endpoints)
 
   /preparePairing:
     post:
@@ -258,6 +266,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/PairingResponseErrorMessage'  
+        '401':
+          description: The requests originates from outside the LAN
+        '404':
+          description: Not implemented (this is the recommended response from WAN endpoints)
 
   /cancelPreparePairing:
     post:
@@ -283,6 +295,10 @@ paths:
       responses:
         '204':
           description: Cancellation received (also used when provided clientNodeId or serverNode is not known).
+        '401':
+          description: The requests originates from outside the LAN
+        '404':
+          description: Not implemented (this is the recommended response from WAN endpoints)
 
   /waitForPairing:
     post:
@@ -339,6 +355,10 @@ paths:
           description: No action for the client, try again.
         '400':
           description: The server is not available for long polling. Do not attempt to connect again until the long-polling feature is advertised next time through DNS-SD.
+        '401':
+          description: The requests originates from outside the LAN. Do not attempt to connect again.
+        '404':
+          description: Not implemented (this is the recommended response from WAN endpoints)
         '503':
           description: Long-polling temporarily not available, try again later.
 
