@@ -392,10 +392,10 @@ components:
       description: Details the Connection client needs to set up an S2 communication channel
       type: object
       required: 
-        - initiateConnectionUrl
+        - initiateSessionUrl
         - accessToken
       properties:
-        initiateConnectionUrl:
+        initiateSessionUrl:
           type: string
           format: uri
         accessToken:
