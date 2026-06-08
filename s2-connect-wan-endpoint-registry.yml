@@ -102,7 +102,7 @@ components:
         - icon32
         - icon128
         - icon512
-        - pairingApiUrl
+        - pairingUrl
         - regions
         - status
         - cem
@@ -129,7 +129,7 @@ components:
           description: URL of the icon of the endpoint in the size of 512 by 512 pixels and in PNG format.
           type: string
           format: uri
-        pairingApiUrl:
+        pairingUrl:
           description: URL of the pairing API. Must include the protocol ('https://') and end with a slash ('/'), and may not include the API version (e.g. 'https://hostname.tld/pairing/'). 
           type: string
           format: uri
