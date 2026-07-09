@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: "1.0-beta-2"
+  version: "v1.0"
   title: S2 Connect - Common schemas
   description: "Common schemas used for both pairing and connection initiation. For more information, please find the specification at [S2 documentation](https://docs.s2standard.org)."
   license:
