@@ -16,9 +16,6 @@ S2 Connect is a solution that builds upon two other specification projects. Note
 ## Documentation
 Documentation for all S2 specification projects can be found on [docs.s2standard.org](https://docs.s2standard.org/). The S2 Connect specification can be found [here](https://docs.s2standard.org/docs/communication-layer/discovery-pairing-authentication/).
 
-# Status
-The specification is still under development, and currently in beta.
-
 ## Discussion
 You are welcome to join the discussion on the [S2 Discord server](https://discord.com/invite/NyFMEPmuDw)!
 
