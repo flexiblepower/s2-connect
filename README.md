@@ -4,7 +4,7 @@ S2 Connect is a protocol specification enabling communication between an Energy 
 
 For more information about S2 visit [s2standard.org](https://s2standard.org/).
 
-This repository contains the OpenAPI specification files for the pairing process and connection initiation process of S2 Connect. **These files merely support the [S2 Connect specification](https://docs.s2standard.org/docs/communication-layer/discovery-pairing-authentication/). Anyone interested in developing an S2 Connect implementation should use the specification as starting point.**
+This repository contains the OpenAPI specification files for the pairing process and connection initiation process of S2 Connect. **These files merely support the [S2 Connect specification](https://docs.s2standard.org/s2-connect/1.0.0/discovery-pairing-authentication/). Anyone interested in developing an S2 Connect implementation should use the specification as starting point.**
 
 ## The S2 standard
 S2 Connect is a solution that builds upon two other specification projects. Note that each of these projects could be used on its own.
@@ -14,7 +14,7 @@ S2 Connect is a solution that builds upon two other specification projects. Note
 * **S2 Connect**: Protocol specification for discovering, pairing and starting a communication channel for exchanging S2 JSON messages.
 
 ## Documentation
-Documentation for all S2 specification projects can be found on [docs.s2standard.org](https://docs.s2standard.org/). The S2 Connect specification can be found [here](https://docs.s2standard.org/docs/communication-layer/discovery-pairing-authentication/).
+Documentation for all S2 specification projects can be found on [docs.s2standard.org](https://docs.s2standard.org/). The S2 Connect specification can be found [here](https://docs.s2standard.org/s2-connect/1.0.0/discovery-pairing-authentication/).
 
 ## Discussion
 You are welcome to join the discussion on the [S2 Discord server](https://discord.com/invite/NyFMEPmuDw)!
